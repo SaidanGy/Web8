@@ -1,2 +1,2 @@
-# Web8
-Nuevas Tecnologías de Base de Datos 8vo ISC, Crud pequeño, trabajo de conexion con MongoDB y Java
+# Web Java y MoongoDB
+Crud pequeño con interfaz sencilla solo para funcionamiento nada estetico
