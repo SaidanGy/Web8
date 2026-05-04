@@ -73,7 +73,6 @@ public class MongoDB {
         mongoDB.mostrarColecciones("Escuela");
         
         //personas.drop(); //elimina una entidad de la base de datos
-        //Eliminar base de datos
         try {
             MongoDatabase database = mongoDB.getDatabase("Escuela");
             database.drop();
