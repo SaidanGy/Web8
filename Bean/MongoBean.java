@@ -1,5 +1,5 @@
 package org.example.base2.Bean;
-///////////     http://localhost:8080/BASE2-1.0-SNAPSHOT/
+/// ////////////////////////
 import com.mongodb.MongoException;
 import org.example.base2.utiles.ConexionMongoDB;
 import org.slf4j.Logger;

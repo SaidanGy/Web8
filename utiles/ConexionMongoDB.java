@@ -30,7 +30,7 @@ public class ConexionMongoDB {
     private int maxWaitTime;
     private int maxLifeTime;
     private int maxIdleTime;
-    private String appName;
+    private String appName; // Ojo aquí: en tu imagen decía 'int', pero debe ser 'String'
 
     public ConexionMongoDB() {
         Properties properties = null;
@@ -64,6 +64,7 @@ public class ConexionMongoDB {
 
             Bson comando = new BsonDocument("ping", new BsonInt64(1));
             Document resultado = database.runCommand(comando);
+            //logger.info("Resultado Ping: ", resultado);
         } catch (MongoException e) {
             logger.error("Error Ping", e.getMessage());
             return false;
@@ -78,6 +79,7 @@ public class ConexionMongoDB {
             return false;
         }
         try {
+            // MongoClient mongoClient = MongoClients.create(this.connectionString);
             MongoClient mongoClient = MongoClients.create(
                     MongoClientSettings.builder()
                             .applicationName(this.appName)
@@ -101,6 +103,7 @@ public class ConexionMongoDB {
             logger.error("Error conexión: " + e.getMessage());
             throw e;
         }
+
         return false;
     }
 
@@ -195,6 +198,7 @@ public class ConexionMongoDB {
         MongoDatabase database = getDatabase(databaseName);
         return database.getCollection(collectionName, entidad);
     }
+
 
     public void cerrarConexion() {
         if (this.client != null) {
